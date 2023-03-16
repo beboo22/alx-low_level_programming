@@ -1,11 +1,11 @@
-#include <stdio.h>
+#include <unistd.h>
 
 /**
  * main - Entry point
  *
- * Description: A C program that prints with put function
+ * Description: A C program that prints without printf or puts
  *
- * Return: Always 1 (not Success)
+ * Return: Return an error 1
 */
 
 int main(void)
