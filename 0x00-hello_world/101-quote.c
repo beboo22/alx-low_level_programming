@@ -5,13 +5,13 @@
  *
  * Description: A C program that prints with put function
  *
- * Return: Always 0 (Success)
+ * Return: Always 1 (not Success)
 */
 
 int main(void)
 {
-	char msg[]("and that piece of art is useful\" - Dora Korpar, 2015-10-19\n");
+	char msg[] = "and that piece of art is useful\" - Dora Korpar, 2015-10-19\n";
 
 	write(1, msg, 59);
-	return (0);
+	return (1);
 }
