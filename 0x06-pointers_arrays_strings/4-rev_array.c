@@ -1,24 +1,26 @@
 #include "main.h"
 
 /**
- *_strcat - Write a function that concatenates two strings.
+ * reverse_array - Write a function that reverses the content of an array of
+ * integers.
  *
- *@dest: This is the output dest
- *@src: This is the input source
+ * @a: This is the input array
+ * @n: This is the positions have the array
  *
- * Return: This return to dest, that concatenates two strings
  */
-
-char *_strcat(char *dest, char *src)
+void reverse_array(int *a, int n)
 {
-	int i, j;
+	int i, last;
 
-	for (i = 0; dest[i] != '\0'; i++)
-		;
-	for (j = 0; src[j] != '\0'; j++)
+	last = n - 1;
+	for (i = 0; i < n / 2; i++)
 	{
-		dest[i] = src[j];
-		i++;
+		int start, end;
+
+		start = a[i];
+		end = a[last];
+		a[i] = end;
+		a[last] = start;
+		last--;
 	}
-	return (dest);
 }
