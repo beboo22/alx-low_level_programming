@@ -1,36 +1,31 @@
-#include "holberton.h"
+#include "main.h"
 /**
- * cap_string - capitalizes most of the words in a string.
- * @s: analized string.
- *
- * Return: String with all words capitalized.
- */
+* cap_string - capitalizes all words of a string
+* @s: input string.
+* Return: the pointer to dest.
+*/
+
+
 char *cap_string(char *s)
 {
-	int i, j;
-	int a[] = {32, 9, 10, 44, 59, 46, 33, 63, 34, 40, 41, 123, 125};
+	int count = 0, i;
+	int separators[] = {32, 9, 10, 44, 59, 46, 33, 63, 34, 40, 41, 123, 125};
 
-	i = 0;
-	while (*(s + i) != '\0')
+	if (*(s + count) >= 97 && *(s + count) <= 122)
+		*(s + count) = *(s + count) - 32;
+		count++;
+	while (*(s + count) != '\0')
 	{
-		if (*(s + i) >= 'a' && *(s + i) <= 'z')
+		for (i = 0; i < 13; i++)
 		{
-			if (i == 0)
+			if (*(s + count) == separators[i])
 			{
-				*(s + i) = *(s + i) - 32;
-			}
-			else
-			{
-				for (j = 0; j <= 12; j++)
-				{
-					if (a[j] == *(s + i - 1))
-					{
-						*(s + i) = *(s + i) - 32;
-					}
-				}
+				if ((*(s + (count + 1)) >= 97) && (*(s + (count + 1)) <= 122))
+					*(s + (count + 1)) = *(s + (count + 1)) - 32;
+				break;
 			}
 		}
-	i++;
+	count++;
 	}
 	return (s);
 }
