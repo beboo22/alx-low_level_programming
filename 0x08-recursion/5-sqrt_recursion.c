@@ -6,9 +6,10 @@
  * @n: int n
  * Return: int
  */
+int _sqrt(int n, int i);
 int _sqrt_recursion(int n)
 {
-	return (sqrt(n, 1));
+	return (_sqrt(n, 1));
 }
 
 /**
@@ -27,3 +28,4 @@ int _sqrt(int n, int i)
 		return (i);
 	return (_sqrt(n, i + 1));
 }
+
