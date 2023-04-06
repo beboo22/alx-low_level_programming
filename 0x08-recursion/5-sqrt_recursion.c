@@ -1,4 +1,5 @@
 #include "main.h"
+#include <math.h>
 
 /**
  * _sqrt_recursion - main funct
