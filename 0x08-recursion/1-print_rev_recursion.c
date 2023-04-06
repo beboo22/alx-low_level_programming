@@ -6,11 +6,11 @@
  *
  */
 
-void _print_rev_recursion(char *x)
+void _print_rev_recursion(char *s)
 {
-	if (*x)
+	if (*s)
 	{
-		_print_rev_recursion(x + 1);
-		putchar(*x);
+		_print_rev_recursion(s + 1);
+		putchar(*s);
 	}
 }
