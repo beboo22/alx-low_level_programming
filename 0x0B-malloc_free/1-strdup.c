@@ -11,6 +11,7 @@ char *_strdup(char *str)
 {
 	char *c;
 	unsigned int z = 0;
+	unsigned int i = 0;
 
 	for ( ; str[z] != '\0'; z++)
 		;
@@ -20,7 +21,7 @@ char *_strdup(char *str)
 	if (c == 0 || str == NULL)
 		return (NULL);
 
-	for (unsigned int i = 0; i < z; i++)
+	for ( ; i < z; i++)
 		c[i] = str[i];
 
 
