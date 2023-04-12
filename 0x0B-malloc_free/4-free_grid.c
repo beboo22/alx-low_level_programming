@@ -1,3 +1,7 @@
+#include "main.h"
+#include <stddef.h>
+#include <stdlib.h>
+
 /**
  * free_grid - Frees a 2 dimensional grid.
  * @grid: Multidimensional array of integers.
