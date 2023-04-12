@@ -11,7 +11,7 @@
 char *str_concat(char *s1, char *s2)
 {
 	char *strout;
-	unsigned int i, j, z, z2;
+	unsigned int i, j, z1, z2;
 
 	if (s1 == NULL)
 		s1 = "";
@@ -36,7 +36,7 @@ char *str_concat(char *s1, char *s2)
 		strout[z1] = s1[z1];
 
 	z2 = j;
-	for (j = 0; j <= z2; z1++, j++)
+	for (j = 0; j <= z2; z1++; j++)
 		strout[z1] = s2[j];
 
 	return (strout);
