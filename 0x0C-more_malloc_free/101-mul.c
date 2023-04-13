@@ -4,29 +4,52 @@
 #include <stdlib.h>
 
 /**
- * main - multiplies two positive numbers
- * @argc: n arguments
- * @argv: args
- * Return: int
- */
-int main(int argc, char *argv[])
+  * argstostr - convert the params passed to the program to string
+  * @ac: the argument count
+  * @av: the argument vector
+  *
+  * Return: ...
+  */
+char *argstostr(int ac, char **av)
 {
-unsigned long mul;
-int i, j;
-	if (argc != 3)
-	{ printf("Error\n");
-	exit(98); }
-	for (i = 1; i < argc; i++)
+	int ch = 0, i = 0, j = 0, k = 0;
+	char *s;
+
+	if (ac == 0 || av == NULL)
+		return (NULL);
+
+	while (i < ac)
 	{
-		for (j = 0; argv[i][j] != '\0'; j++)
+		while (av[i][j])
 		{
-			if (argv[i][j] > 57 || argv[i][j] < 48)
-			{  printf("Error\n");
-			exit(98); }
+			ch++;
+			j++;
 		}
 
+		j = 0;
+		i++;
 	}
-	mul = atol(argv[1]) *  atol(argv[2]);
-	printf("%lu\n", mul);
-return (0);
+
+	s = malloc((sizeof(char) * ch) + ac + 1);
+
+	i = 0;
+	while (av[i])
+	{
+		while (av[i][j])
+		{
+			s[k] = av[i][j];
+			k++;
+			j++;
+		}
+
+		s[k] = '\n';
+
+		j = 0;
+		k++;
+		i++;
+	}
+
+	k++;
+	s[k] = '\0';
+	return (s);
 }
