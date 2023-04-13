@@ -2,54 +2,38 @@
 #include <stdio.h>
 #include <string.h>
 #include <stdlib.h>
+#include <limits.h>
 
 /**
-  * argstostr - convert the params passed to the program to string
-  * @ac: the argument count
-  * @av: the argument vector
-  *
-  * Return: ...
-  */
-char *argstostr(int ac, char **av)
+ * main - multiplies two positive numbers
+ * @argc: n arguments
+ * @argv: args
+ * Return: int
+**/
+
+int main(int argc, char *argv[])
 {
-	int ch = 0, i = 0, j = 0, k = 0;
-	char *s;
+	unsigned long mul;
+	int i, j;
 
-	if (ac == 0 || av == NULL)
-		return (NULL);
-
-	while (i < ac)
+	if (argc != 3)
 	{
-		while (av[i][j])
-		{
-			ch++;
-			j++;
-		}
-
-		j = 0;
-		i++;
+		printf("Error\n");
+		exit(98);
 	}
 
-	s = malloc((sizeof(char) * ch) + ac + 1);
-
-	i = 0;
-	while (av[i])
+	for (i = 1; i < argc; i++)
 	{
-		while (av[i][j])
+		for (j = 0; argv[i][j] != '\0'; j++)
 		{
-			s[k] = av[i][j];
-			k++;
-			j++;
+			if (argv[i][j] > 57 || argv[i][j] < 48)
+			{
+				printf("Error\n");
+				exit(98);
+			}
 		}
-
-		s[k] = '\n';
-
-		j = 0;
-		k++;
-		i++;
 	}
-
-	k++;
-	s[k] = '\0';
-	return (s);
+	mul = atol(argv[1]) * atol(argv[2]);
+	printf("%lu\n", mul);
+	return (0);
 }
