@@ -1,5 +1,5 @@
-#include "lists.h"
 #include <stdlib.h>
+#include "lists.h"
 
 /**
  * delete_nodeint_at_index - deletes the node at a given position in a linked list.
@@ -26,13 +26,11 @@ int delete_nodeint_at_index(listint_t **head, unsigned int index)
 	}
 
 	tmp = *head;
-	for (i = 0; i < index; i++)
-	{
-		if (tmp->next == NULL)
-			return (-1);
-
+	for (i = 0; tmp && i < index - 1; i++)
 		tmp = tmp->next;
-	}
+
+	if (tmp == NULL || tmp->next == NULL)
+		return (-1);
 
 	ptr = tmp->next;
 	tmp->next = ptr->next;
