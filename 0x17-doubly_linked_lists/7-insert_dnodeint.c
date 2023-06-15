@@ -30,8 +30,8 @@ dlistint_t *insert_dnodeint_at_index(dlistint_t **h, unsigned int idx, int n)
 	{
 		if (temp->next == NULL && cnt == idx - 1)
 		{
+			free(nnode);
 			nnode = add_dnodeint_end(h, n);
-                        free(nnode);
 			return (nnode);
 		}
 		if (cnt == (idx - 1))
