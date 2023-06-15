@@ -10,6 +10,10 @@ ssize_t read_textfile(const char *filename, size_t letters)
 	int fd;
 	int i, y;
 	char *buf;
+<<<<<<< HEAD
+=======
+
+>>>>>>> 56f58fecd2991800834d37754d05e9187ce28846
 	if (!filename)
 		return (0);
 	fd = open(filename, O_RDONLY);
